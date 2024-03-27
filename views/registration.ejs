@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            height: 430px;
+        }
+        table{
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            
+        }
+        input[type=text],input[type=password]{
+            border-radius: 5rem;
+            width: 200px;
+            height: 30px;
+        }
+        input[type=submit]{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 50px;
+            border-radius: 5rem;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            border: 1px solid black;
+            border-radius: 5rem;
+            background-color: rgb(200, 248, 250);
+            box-shadow: 10px 10px 10px 10px rgb(248, 168, 168);
+            width: 400px;
+            height: 100px;
+            margin-top: 240px;
+        }
+        h2{
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <h2>Registration</h2>
+            <form action="" method="post">
+                <table cellspacing="25" cellpadding="20">
+                    <tr>
+                        <td style="width: 100%"><label for="fname">First Name</label></td>
+                        <td><input type="text" name="firstname" id="fname"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname">Last Name</label></td>
+                        <td><input type="text" name="lastname" id="lname"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="text" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pwd">Password</label></td>
+                        <td><input type="password" name="password" id="pwd"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" id="submit" value="submit"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Already have an account? <a href="login">Log In</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </center>
+    <script>
+        
+    </script>
+</body>
+</html>
