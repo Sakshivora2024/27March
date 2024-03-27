@@ -64,18 +64,43 @@
     <center>
         <div class="container">
             <h2>Login</h2>
-            <form action="" method="post">
+            <form action="" method="post" id="form">
                 <table cellspacing="25" cellpadding="20">
                     <tr><td><label for="email">Email</label></td>
                     <td><input type="text" name="email" id="email"></td></tr>
                     <tr><td><label for="pwd">Password</label></td>
                     <td><input type="password" name="password" id="pwd"></td></tr> 
                     <tr><td></td><td class="link"><a href="email">Forget Password?</a></tr>   
-                    <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+                    <tr><td colspan="2"><input type="button" value="Submit" id="submit"></td></tr>
                     <tr><td colspan="2">Don't have an account? <a href="registration">Sign Up</a></td></tr>
                 </table>
             </form>
         </div>
     </center>
+    <script>
+        let sub = document.getElementById("submit");
+        let frm = document.getElementById("form")
+        sub.addEventListener("click", async()=>{
+            let form1 = new FormData(frm);
+            
+            try {
+                const response = await fetch("http://localhost:8085/login",{
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(Object.fromEntries(form1.entries())),
+                });
+                const result = await response.json();
+                console.log(result["token"]);
+                if(result){
+                    window.location.pathname = `task/${result["token"]}`;
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        })
+    </script>
 </body>
 </html>

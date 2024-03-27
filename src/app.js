@@ -1,12 +1,12 @@
 const express = require("express");
 const dotenv = require('dotenv');
 const cookie_parser = require('cookie-parser');
-const {verify} = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const md5 = require("md5");
 const bcrypt = require("bcryptjs");
 const bodyParser = require('body-parser');
 const db = require("../config/mysql");
-const { createAccessToken, createRefreshToken } = require('./tokens');
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,10 +39,10 @@ app.post("/registration",async(req,res)=>{
             const hashPwd = md5(data.password + salt);
             let sql = `insert into users(firstname,lastname,email,password,salt) values(?,?,?,?,?)`;
             const res1 =await db.query(sql, [data.firstname,data.lastname,data.email,hashPwd,salt]);
-            res.redirect("/login");
+            
         }
         
-        
+        res.redirect("/login");
     } catch (error) {
         console.log(error);
     }
@@ -56,31 +56,27 @@ app.get("/login",(req,res)=>{
 
 app.post("/login",async(req,res)=>{
     const data = req.body;
-    console.log(data);
     try {
         
-        let sql = `select * from users`;
-        const result = await db.query(sql);
-        console.log(result);
-        if(result[0][0]["email"] != data.email){
+        let sql = `select * from users where email = ?`;
+        const result = await db.query(sql,[data.email]);
+        let salt = result[0][0]["salt"];
+        const hashPwd = md5(data.password + salt);
+        if(result[0][0]["email"] != data.email && hashPwd != result[0][0]["password"]){
 
-            res.send("User doesnot exist")
+            res.send("User does not exist")
         }
         else{
-            let salt = result[0][0]["salt"];
-            console.log(salt);
-            const hashPwd = md5(data.password + salt);
-            console.log(hashPwd);
-            if(hashPwd != result[0][0]["password"]){
-                res.send("password not correct")
-            }
-            else{
-                let accessToken = createAccessToken(result[0][0]["id"]);
-                let refreshToken = createRefreshToken(result[0][0]["id"]);
-                let sql = `update users set authcode = ? where email = ?`;
-                const res2 = await db.query(sql,[refreshToken,data.email]);
-                res.send("Successfully");
-            }
+                let jwtSecretKey = process.env.ACCESS_TOKEN_SECRET;
+                let id = result[0][0]["id"];
+                // console.log(jwtSecretKey);
+                let data1 = {id};
+                const token = jwt.sign(data1,jwtSecretKey,{
+                    expiresIn: '1h'
+                });
+
+                console.log(token);
+                res.send({token});
             
         }
         
@@ -91,6 +87,11 @@ app.post("/login",async(req,res)=>{
    
 })
 
+
+app.get("/task/:token",(req,res) =>{
+    console.log("token",req.params.token)
+    res.render("task");
+})
 
 let port = process.env.PORT || 3000;
 app.listen(port,()=>{
