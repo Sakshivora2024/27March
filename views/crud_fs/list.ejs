@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="text-align: center;">User Details</h2>
+    <center> <table border="1" cellpadding="10" >
+        <tr style="background-color: aquamarine;">
+            <!-- <th></th> -->
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone No</th>
+            <th>Edit</th>
+        </tr>
+        <% for(let i = 0;i < users.length; i++){%>
+            <tr>
+                <!-- <td><input type='text' value="<%= users[i].uniqueId %>" name='users[<%= i %>][uniqueId]'></td> -->
+                <td><%= users[i].firstname %></td>
+                <td><%= users[i].lastname %></td>
+                <td><%= users[i].email %></td>
+                <td><%= users[i].phoneno %></td>
+                <td><form action="/userdetail">
+                    <input type="hidden" name="userid" value="<%=users[i].uniqueId%>">
+                    <input type="submit" value="View">
+                </form></td>
+            </tr>
+        
+        <%}%>
+    </table>
+</center>
+</body>
+</html>

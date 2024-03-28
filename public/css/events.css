@@ -1,0 +1,40 @@
+.events{
+    width: 170px;
+    border: 15px solid rgb(255, 244, 94);
+    padding: 50px;
+    color: grey;
+
+}
+
+.droptarget{
+ width: 100px;
+ height: 35px;
+ padding: 10px;
+ border: 1px solid black;
+}
+
+.event{
+    width: 170px;
+    border: 15px solid rgb(0, 236, 216);
+    padding: 50px;
+    color: grey;
+}
+
+.one{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+.mdiv{
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.mdiv1{
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    overflow: scroll;
+}
