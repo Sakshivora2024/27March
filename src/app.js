@@ -6,6 +6,8 @@ const md5 = require("md5");
 const bcrypt = require("bcryptjs");
 const bodyParser = require('body-parser');
 const db = require("../config/mysql");
+const { checkAuthentication } = require("./tokens");
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -51,7 +53,7 @@ app.post("/registration",async(req,res)=>{
 
 app.get("/login",(req,res)=>{
     
-    res.render("login");
+    res.render("login",{error:''});
 })
 
 app.post("/login",async(req,res)=>{
@@ -62,25 +64,30 @@ app.post("/login",async(req,res)=>{
         const result = await db.query(sql,[data.email]);
         let salt = result[0][0]["salt"];
         const hashPwd = md5(data.password + salt);
-        if(result[0][0]["email"] != data.email && hashPwd != result[0][0]["password"]){
-
-            res.send("User does not exist")
-        }
-        else{
+        console.log(Object.keys(result[0][0]).length > 0)
+        if(Object.keys(result[0][0]).length > 0){
+            if(hashPwd !== result[0][0]["password"]){
+                console.log(1)
+                res.render("login",{error:"Invalid Password"})
+            }
+            else{
+                console.log(2);
                 let jwtSecretKey = process.env.ACCESS_TOKEN_SECRET;
                 let id = result[0][0]["id"];
-                // console.log(jwtSecretKey);
                 let data1 = {id};
                 const token = jwt.sign(data1,jwtSecretKey,{
                     expiresIn: '1h'
                 });
-
-                console.log(token);
-                res.send({token});
-            
+                
+                res.cookie('jwt',token);
+                res.redirect("/task");
+                
+            }
         }
-        
-        
+        else{
+                res.render("login",{error:"Invalid Password or email"});
+        }
+
     } catch (error) {
         console.log(error);
     }
@@ -88,9 +95,34 @@ app.post("/login",async(req,res)=>{
 })
 
 
-app.get("/task/:token",(req,res) =>{
-    console.log("token",req.params.token)
+app.get("/task",(req,res,next) =>{
+    // console.log(req.params.token);
+    // checkAuthentication(req,res,next);
     res.render("task");
+})
+
+app.get("/dynamictable",checkAuthentication,(req,res)=>{
+    res.render("dynamictable");
+})
+
+app.get("/kukuCube",checkAuthentication,(req,res)=>{
+    res.render("kukuCube");
+})
+
+app.get("/tic-tac-toe",checkAuthentication,(req,res)=>{
+    res.render("tic-tac-toe");
+})
+
+app.get("/practical1",checkAuthentication,(req,res)=>{
+    res.render("practical1");
+})
+
+app.get("/practical2",checkAuthentication,(req,res)=>{
+    res.render("practical2");
+})
+
+app.get("/practical3",checkAuthentication,(req,res)=>{
+    res.render("practical3");
 })
 
 let port = process.env.PORT || 3000;

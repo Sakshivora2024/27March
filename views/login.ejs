@@ -58,11 +58,15 @@
         .link{
             float: right;
         }
+        h3{
+            color: red;
+        }
     </style>
 </head>
 <body>
     <center>
         <div class="container">
+            <h3 id="err"><%= error %></h3>
             <h2>Login</h2>
             <form action="" method="post" id="form">
                 <table cellspacing="25" cellpadding="20">
@@ -71,13 +75,14 @@
                     <tr><td><label for="pwd">Password</label></td>
                     <td><input type="password" name="password" id="pwd"></td></tr> 
                     <tr><td></td><td class="link"><a href="email">Forget Password?</a></tr>   
-                    <tr><td colspan="2"><input type="button" value="Submit" id="submit"></td></tr>
+                    <tr><td colspan="2"><input type="submit" value="Submit" id="submit"></td></tr>
                     <tr><td colspan="2">Don't have an account? <a href="registration">Sign Up</a></td></tr>
                 </table>
             </form>
+            
         </div>
     </center>
-    <script>
+    <!-- <script>
         let sub = document.getElementById("submit");
         let frm = document.getElementById("form")
         sub.addEventListener("click", async()=>{
@@ -95,12 +100,17 @@
                 const result = await response.json();
                 console.log(result["token"]);
                 if(result){
-                    window.location.pathname = `task/${result["token"]}`;
+                    window.location.pathname = `task`;
+                }
+                else{
+                    let para = document.getElementById("err");
+                    let errr = document.createTextNode(result["error"]);
+                    para.appendChild(errr)  
                 }
             } catch (error) {
                 console.log(error);
             }
-        })
+        }) -->
     </script>
 </body>
 </html>
