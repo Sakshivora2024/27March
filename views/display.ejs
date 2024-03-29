@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    
+        <table border="1" cellspacing="10" cellpadding="20" style="border-collapse: collapse;">
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th></th>
+            </tr>
+            <% for(let i=0; i < result.length ;i++){%>
+                <tr>
+                    <td><%= result[i].id %></td>
+                    <td><%= result[i].firstname %></td>
+                    <td><%= result[i].lastname %></td>
+                    <td><form action="/update/<%= result[i].id %>" >
+                        <!-- <input type="hidden" name="id" > -->
+                        <input type="submit" value="Update">
+                    </form></td>
+                </tr>
+            <%}%>
+        </table>
+
+</body>
+</html>

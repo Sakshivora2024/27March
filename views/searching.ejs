@@ -1,0 +1,360 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .bn1{
+                margin-bottom: 20px;
+                background-color: #aad6fa;
+                border-radius: 20rem;
+                width: 40px;
+                height: 30px;
+                /* align-items: center; */
+                border-color: #aad6fa   ;
+            
+            }
+            .bn1:hover{
+                background-color: #d8ebfa;
+            }
+            .btn{
+                display: flex;
+                flex-direction: column;
+            }
+            .btn > button {
+                border-radius: 50%;
+            }
+            /* table > tr >th >button >img{
+                display: flex;
+                
+            } */
+            .btn1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+            h2{
+                text-align: center;
+            }
+            /* form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+            } */
+            /* #toggle{
+               display: none;
+               margin: auto;
+
+            } */
+            form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            .bn2{
+                width: 100px;
+                margin: auto;
+            }
+            /* .tbl{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-collapse: collapse;
+            } */
+        </style>
+    </head>
+    <body>
+        <h2>Sakshi Vora</h2>
+        <h2>Student Details</h2>
+        <div style="display: flex; justify-content: center; gap: 20px; align-items: center; text-align: center;">
+            <button id="firstpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg=="/></button>
+            <button id="previouspage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnElEQVRIS+2T0Q2AIAxEYQM30RF0Ih1BJ9MRdBNH8JpoQvjptULihyT3RXOvPWgMlU+s7B9+gJrwJyNq0PYILWr7KLBOIOYr1N2AWYNYAKn5AeMeOksBXOYCZyZwmzOAV+YsYENhC+3QwOSevgsbkRvCAKQhicoFYQFuiAWQQ2STiy7a83YS18SYM79IW1T13hqRapgX/AA1suoRXYjsHhmBZNpoAAAAAElFTkSuQmCC"/></button>
+            <button id="curpage" class="bn1"><%= page %></button>
+            <button id="nextpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkElEQVRIS2NkoDFgpLH5DKMWEAzhQRVEAUDnHgDiDwSdjaSAWB+ADF8PxBeA2JEUS4i1QADqen1SLSHWApCnybKEFAvIsoRUC0i2hFwL9gNtMgDii0DsgC/SSbUAFA9EGw7yLikWkGw4KRaQZTgpFsAyGsEwR8/lpAQRTYsKUoofFLWk+IAsS0YtIBhsNA8iACj+IhkevsLkAAAAAElFTkSuQmCC"/></button>
+            <button id="lastpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC"/></button>
+
+
+            <!-- <p>No. of records : <input type="text" id="val"></p> -->
+        </div>
+
+        <form action="/searching" method="post">
+            <input type="text" name="str" id="S_Id" tabindex="1"  size="80" value="<%= str %>" autofocus>
+            <input type="submit" tabindex="2" value="Go"> 
+        </form>
+        <!-- <button onclick="fun()" class="bn2">Show More</button>
+        <form action="/searching" method="post" id="toggle">                 
+
+                    <label for="Name">First Name:</label><input type="text" id="Name" name="fname">
+                    <label for="Name">Last Name:</label><input type="text" id="Name" name="lname">
+                    <label for="Age">Age:</label><input type="text" id="Age" name="age">
+                    <label for="gender">Gender:</label><input type="text" name="gender" id="gender">
+                    <label for="City">City:</label><input type="text" name="city" id="City">
+                    <label for="contactNo">ContactNo:</label><input type="text" name="contactNo" id="contactNo">
+                    <select name="choose" id="choose">
+                        <option value="0">Select AND/OR</option>
+                        <option value="1">AND</option>
+                        <option value="2">OR</option>
+                    </select>
+                    <input type="submit" value="Go">     
+        </form> -->
+        <center><table border="1" cellpadding="5" style="border-collapse: collapse;">
+            <tr>
+                <td>Name</td>
+                <td>_</td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td>^</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Phone No</td>
+                <td>}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>{</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>:</td>
+            </tr>
+        </table>
+    </center>
+    <center><table border="1" cellpadding="5" style="border-collapse: collapse;">
+            <tr style="background-color: aquamarine;">
+                <!-- <th></th> -->
+                <th>
+                    <div class="btn1">
+                        Student Id 
+                        <div class="btn">
+                            <button id="asc" onclick="asc('student_Id')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('student_Id')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Name
+                        <div class="btn">
+                            <button id="asc" onclick="asc('firstName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('firstName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Surname
+                        <div class="btn">
+                            <button id="asc" onclick="asc('lastName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('lastName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Age
+                        <div class="btn">
+                            <button id="asc" onclick="asc('age')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('age')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Phone No
+                        <div class="btn">
+                            <button id="asc" onclick="asc('contactNo')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('contactNo')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Date Of Birth
+                        <div class="btn">
+                            <button id="asc" onclick="asc('birthdate')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('birthdate')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Gender
+                        <div class="btn">
+                            <button id="asc" onclick="asc('gender')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('gender')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn1">
+                        City
+                        <div class="btn">
+                            <button id="asc" onclick="asc('city')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
+                            <button id="desc" onclick="desc('city')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <% for(let i = 0;i < student.length; i++){%>
+                <tr>              
+                    <td><%= student[i].student_Id %></td>
+                    <td><%= student[i].name %></td>
+                    <td><%= student[i].surname %></td>
+                    <td><%= student[i].age %></td>
+                    <td><%= student[i].contactNo %></td>
+                    <td><%= student[i].birthdate %></td>
+                    <td><%= student[i].gender %></td>
+                    <td><%= student[i].city %></td>
+                </tr>        
+            <%}%>
+        </table>
+    </center>
+        
+    <!-- </center> -->
+    <script >
+        let total_rec = 50000;
+    let limit = JSON.parse(<%= limit %>);
+    let pages = total_rec / limit;
+    // let value = localStorage.getItem("page") ? localStorage.getItem("page") : 1;
+    let value = <%= page %>;
+
+    let prev = document.getElementById("previouspage");
+    let next = document.getElementById("nextpage");
+    let first = document.getElementById("firstpage");
+    let last = document.getElementById("lastpage");
+    let curpage = document.getElementById("curpage");
+    curpage.innerText = value;
+
+
+    if(value == 1){
+        prev.style.opacity = "0.5";
+        prev.disabled = true;
+        first.style.opacity = "0.5";
+        first.disabled = true;
+    }
+
+    if(value == pages){
+        next.style.opacity = "0.5";
+        next.disabled = true;
+        last.style.opacity = "0.5";
+        last.disabled = true;
+    }
+    const pre = () =>{
+        if(value > 1  && value <= pages){
+            console.log("Previous page");
+            localStorage.setItem("page", --value);
+            let url = value;
+            // loadUrl(url);
+            append_parameter("page",url);
+            return value;
+        }
+
+    }
+
+    const nex = () =>{
+        if(value>=1 && value < pages){
+            console.log("Next Page");
+            localStorage.setItem("page", ++value);
+            let url = value;
+            // loadUrl(url);
+            append_parameter("page",url);
+            return value;
+        }
+
+    }
+
+
+    const firstpg = ()=> {
+        console.log("starting page");
+        value = 1;
+        localStorage.setItem("page" ,value);
+        let url = value;
+        // loadUrl(url);
+        append_parameter("page",url);
+        return value;
+    }
+
+    const lastpg = ()=> {
+        console.log("last page");
+        value = pages;
+        localStorage.setItem("page" ,value);
+        let url = value;
+        // loadUrl(url);
+        append_parameter("page",url);
+        return value;
+
+    }
+
+
+
+    // const loadUrl = (url) =>{
+    //     window.location.href="/student_list?page="+url;
+    // }
+
+    function asc(value){
+        window.location.href=`/student_list?obf=${value}&ord=asc`;
+        // append_parameter("obf",value);
+        // append_parameter("ord","asc");
+    }
+
+    function desc(value){
+        window.location.href=`/student_list?obf=${value}&order=desc`;
+        // append_parameter("obf",value);
+        // append_parameter("ord","desc");
+    }
+
+    const append_parameter = (name,value) =>{
+        let params = new URLSearchParams(window.location.search);   
+        params.set(name,value);
+        window.location.search = params.toString();
+        console.log(params);
+    }
+
+    const remove_parameter = (name,value) =>{
+        let params = new URLSearchParams(window.location.search);   
+        params.delete(name);
+
+    }
+
+    // let toggled = document.getElementById("toggle");
+    // let toggle = false
+    // function fun(){
+    //     console.log("funtion....");
+        
+    //     if(!toggle){
+    //         toggle = true;
+    //         toggled.style.display = "flex";
+    //         toggled.style.gap = "10px";
+    //     }
+    //     else{
+    //         toggle = false;
+    //         toggled.style.display = "none";
+    //     }
+    // }
+
+    prev.addEventListener("click",pre);
+
+    next.addEventListener("click",nex);
+
+    first.addEventListener("click",firstpg);
+
+    last.addEventListener("click", lastpg);
+
+    </script>
+    </body>
+    </html>
