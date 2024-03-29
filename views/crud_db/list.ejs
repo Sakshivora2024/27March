@@ -23,7 +23,7 @@
                 <td><%= users[i].lastname %></td>
                 <td><%= users[i].email %></td>
                 <td><%= users[i].phoneno %></td>
-                <td><form action="/userdetails">
+                <td><form action="/userdetail">
                     <input type="hidden" name="userid" value="<%=users[i].uniqueId%>">
                     <input type="submit" value="View">
                 </form></td>
