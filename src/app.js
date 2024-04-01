@@ -876,6 +876,10 @@ app.post("/update/:id",checkAuthentication,(req,res) =>{
     
 })
 
+app.get("/logout",checkAuthentication,(req,res)=>{
+    res.clearCookie("jwt").status(200).redirect("/login");
+})
+
 let port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
