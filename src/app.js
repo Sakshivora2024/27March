@@ -97,7 +97,7 @@ app.post("/login",async(req,res)=>{
 })
 
 
-app.get("/task",(req,res,next) =>{
+app.get("/task",checkAuthentication,(req,res,next) =>{
     // console.log(req.params.token);
     // checkAuthentication(req,res,next);
     res.render("task");
