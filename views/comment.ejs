@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: square;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style> 
+</head>
+<body>
+    <ul id="comments" style=" list-style-type: square;"></ul>
+<script>
+
+const fetch_comments = async () =>{
+    let result = await fetch("https://jsonplaceholder.org/comments");
+    let data = await result.json(); 
+    const urlParams = new URLSearchParams(window.location.search);
+    let postId = urlParams.get("postId");
+    let lst = " ";
+    let filterdData = data.filter(ele => ele.postId == postId).map((ele) =>{ return ele.comment });
+    filterdData.forEach(element => {
+            lst += `<li>${element}</li>`;
+    });
+    // console.log(filterdData);
+    return document.getElementById('comments').innerHTML = 
+        filterdData.length > 0 ? lst : `<div>No Comments are available </div>`;
+}
+
+fetch_comments();
+</script>
+
+</body>
+</html>

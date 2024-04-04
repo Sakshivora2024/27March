@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bn1{
+            margin-bottom: 20px;
+            background-color: #aad6fa;
+            border-radius: 20rem;
+            width: 40px;
+            height: 30px;
+            /* align-items: center; */
+            border-color: #aad6fa   ;
+           
+        }
+        .bn1:hover{
+            background-color: #d8ebfa;
+        }
+        .btn{
+            display: flex;
+            flex-direction: column;
+        }
+        .btn > button {
+            border-radius: 50%;
+        }
+        /* table > tr >th >button >img{
+            display: flex;
+            
+        } */
+        .btn1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .noborder td{
+            border: 0   ;
+        }
+        td{
+            width: 20px;
+            height: 40px;
+        }
+        th{
+            background-color: aquamarine;
+        }
+
+        ul{
+            list-style-type: square;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        td{
+            text-align: center;
+            width: 100px;
+            height: 180px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Sakshi Vora</h1>
+    <div style="display: flex; justify-content: center; gap: 20px; align-items: center; text-align: center;">
+        <button id="firstpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg=="/></button>
+        <button id="previouspage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnElEQVRIS+2T0Q2AIAxEYQM30RF0Ih1BJ9MRdBNH8JpoQvjptULihyT3RXOvPWgMlU+s7B9+gJrwJyNq0PYILWr7KLBOIOYr1N2AWYNYAKn5AeMeOksBXOYCZyZwmzOAV+YsYENhC+3QwOSevgsbkRvCAKQhicoFYQFuiAWQQ2STiy7a83YS18SYM79IW1T13hqRapgX/AA1suoRXYjsHhmBZNpoAAAAAElFTkSuQmCC"/></button>
+        <button id="curpage" class="bn1">1</button>
+        <button id="nextpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkElEQVRIS2NkoDFgpLH5DKMWEAzhQRVEAUDnHgDiDwSdjaSAWB+ADF8PxBeA2JEUS4i1QADqen1SLSHWApCnybKEFAvIsoRUC0i2hFwL9gNtMgDii0DsgC/SSbUAFA9EGw7yLikWkGw4KRaQZTgpFsAyGsEwR8/lpAQRTYsKUoofFLWk+IAsS0YtIBhsNA8iACj+IhkevsLkAAAAAElFTkSuQmCC"/></button>
+        <button id="lastpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC"/></button>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 20px; align-items: center; text-align: center;">
+            <input type="text" id="search" name="search">
+            <button id="srch">Search</button>
+    </div>
+        <table border="1" cellpadding="10" style="border-collapse: collapse; margin-top: 20px; width: 100%;" id="users">
+
+        </table>
+<script src="/js/json_paging.js"></script>
+
+</body>
+</html>
