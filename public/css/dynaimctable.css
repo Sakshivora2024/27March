@@ -1,12 +1,15 @@
-tr:nth-child(even) td:nth-child(odd){
+tr:nth-child(even) td:nth-child(odd) {
     background-color: lightblue;
 }
-tr:nth-child(odd) td:nth-child(odd){
+
+tr:nth-child(odd) td:nth-child(odd) {
     background-color: lightgreen;
 }
-tr:nth-child(odd) td:nth-child(even){
+
+tr:nth-child(odd) td:nth-child(even) {
     background-color: lightblue;
 }
-tr:nth-child(even) td:nth-child(even){
+
+tr:nth-child(even) td:nth-child(even) {
     background-color: lightgreen;
 }

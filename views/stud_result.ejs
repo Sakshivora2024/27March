@@ -1,202 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .bn1{
+        .bn1 {
             margin-bottom: 20px;
             background-color: #aad6fa;
             border-radius: 20rem;
             width: 40px;
             height: 30px;
             /* align-items: center; */
-            border-color: #aad6fa   ;
-           
+            border-color: #aad6fa;
+
         }
-        .bn1:hover{
+
+        .bn1:hover {
             background-color: #d8ebfa;
         }
-        .btn{
+
+        .btn {
             display: flex;
             flex-direction: column;
         }
-        .btn > button {
+
+        .btn>button {
             border-radius: 50%;
         }
+
         /* table > tr >th >button >img{
             display: flex;
             
         } */
-        .btn1{
+        .btn1 {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 5px;
         }
-        td{
+
+        td {
             text-align: center;
         }
     </style>
 </head>
+
 <body>
     <h1 style="text-align: center;">Sakshi Vora</h1>
     <h2 style="text-align: center;">Student Result Details</h2>
     <div style="display: flex; justify-content: center; gap: 20px; align-items: center; text-align: center;">
-        <button id="firstpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg=="/></button>
-        <button id="previouspage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnElEQVRIS+2T0Q2AIAxEYQM30RF0Ih1BJ9MRdBNH8JpoQvjptULihyT3RXOvPWgMlU+s7B9+gJrwJyNq0PYILWr7KLBOIOYr1N2AWYNYAKn5AeMeOksBXOYCZyZwmzOAV+YsYENhC+3QwOSevgsbkRvCAKQhicoFYQFuiAWQQ2STiy7a83YS18SYM79IW1T13hqRapgX/AA1suoRXYjsHhmBZNpoAAAAAElFTkSuQmCC"/></button>
-        <button id="curpage" class="bn1"><%= page %></button>
-        <button id="nextpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkElEQVRIS2NkoDFgpLH5DKMWEAzhQRVEAUDnHgDiDwSdjaSAWB+ADF8PxBeA2JEUS4i1QADqen1SLSHWApCnybKEFAvIsoRUC0i2hFwL9gNtMgDii0DsgC/SSbUAFA9EGw7yLikWkGw4KRaQZTgpFsAyGsEwR8/lpAQRTYsKUoofFLWk+IAsS0YtIBhsNA8iACj+IhkevsLkAAAAAElFTkSuQmCC"/></button>
-        <button id="lastpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC"/></button>
+        <button id="firstpage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg==" /></button>
+        <button id="previouspage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnElEQVRIS+2T0Q2AIAxEYQM30RF0Ih1BJ9MRdBNH8JpoQvjptULihyT3RXOvPWgMlU+s7B9+gJrwJyNq0PYILWr7KLBOIOYr1N2AWYNYAKn5AeMeOksBXOYCZyZwmzOAV+YsYENhC+3QwOSevgsbkRvCAKQhicoFYQFuiAWQQ2STiy7a83YS18SYM79IW1T13hqRapgX/AA1suoRXYjsHhmBZNpoAAAAAElFTkSuQmCC" /></button>
+        <button id="curpage" class="bn1">
+            <%= page %>
+        </button>
+        <button id="nextpage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkElEQVRIS2NkoDFgpLH5DKMWEAzhQRVEAUDnHgDiDwSdjaSAWB+ADF8PxBeA2JEUS4i1QADqen1SLSHWApCnybKEFAvIsoRUC0i2hFwL9gNtMgDii0DsgC/SSbUAFA9EGw7yLikWkGw4KRaQZTgpFsAyGsEwR8/lpAQRTYsKUoofFLWk+IAsS0YtIBhsNA8iACj+IhkevsLkAAAAAElFTkSuQmCC" /></button>
+        <button id="lastpage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC" /></button>
     </div>
-  <center><table border="1" cellpadding="5" style="border-collapse: collapse;width: 80%;">
-        <tr style="background-color: aquamarine;">
+    <center>
+        <table border="1" cellpadding="5" style="border-collapse: collapse;width: 80%;">
+            <tr style="background-color: aquamarine;">
 
-            <th rowspan="2">Student_Id</th>
-            <th rowspan="2">Name</th>
-            <th colspan="2">Terminal</th>
-            <th colspan="2">Prelim</th>
-            <th colspan="2">External</th>
-            <th rowspan="2">Total</th>
-            <th rowspan="2">View</th>
-        </tr>
-        <tr>
-            <td>Practical(60)</td>
-            <td>Theory(240)</td>
-            <td>Practical(60)</td>
-            <td>Theory(240)</td>
-            <td>Practical(240)</td>
-            <td>Theory(360)</td>
-        </tr>
-        <% for(let i = 0;i < student.length; i++){%>
-            <tr>              
-                <td><%= student[i].student_Id %></td>
-                <td><%= student[i].fullname %></td>
-                <td><%= student[i].practical %></td>
-                <td><%= student[i].theory %></td>
-                <td><%= student1[i].practical %></td>
-                <td><%= student1[i].theory %></td>
-                <td><%= stud[i].practical %></td>
-                <td><%= stud[i].theory %></td>
-                <td><%= total[i].total %></td>
-                <td>
-                    <form action="/student_details">
-                        <input type="hidden" name="studentid" value="<%=student[i].student_Id%>">
-                        <input type="submit" value="View">
-                    </form>
-                </td>
-            </tr>        
-        <%}%>
-    </table>
-</center>
+                <th rowspan="2">Student_Id</th>
+                <th rowspan="2">Name</th>
+                <th colspan="2">Terminal</th>
+                <th colspan="2">Prelim</th>
+                <th colspan="2">External</th>
+                <th rowspan="2">Total</th>
+                <th rowspan="2">View</th>
+            </tr>
+            <tr>
+                <td>Practical(60)</td>
+                <td>Theory(240)</td>
+                <td>Practical(60)</td>
+                <td>Theory(240)</td>
+                <td>Practical(240)</td>
+                <td>Theory(360)</td>
+            </tr>
+            <% for(let i=0;i < student.length; i++){%>
+                <tr>
+                    <td>
+                        <%= student[i].student_Id %>
+                    </td>
+                    <td>
+                        <%= student[i].fullname %>
+                    </td>
+                    <td>
+                        <%= student[i].practical %>
+                    </td>
+                    <td>
+                        <%= student[i].theory %>
+                    </td>
+                    <td>
+                        <%= student1[i].practical %>
+                    </td>
+                    <td>
+                        <%= student1[i].theory %>
+                    </td>
+                    <td>
+                        <%= stud[i].practical %>
+                    </td>
+                    <td>
+                        <%= stud[i].theory %>
+                    </td>
+                    <td>
+                        <%= total[i].total %>
+                    </td>
+                    <td>
+                        <form action="/student_details">
+                            <input type="hidden" name="studentid" value="<%=student[i].student_Id%>">
+                            <input type="submit" value="View">
+                        </form>
+                    </td>
+                </tr>
+                <%}%>
+        </table>
+    </center>
 
-<script >
-    let total_rec = 200;
-    let limit = JSON.parse(<%= limit %>);
-    let pages = total_rec / limit;
-    // let value = localStorage.getItem("page") ? localStorage.getItem("page") : 1;
-    let value = <%= page %>;
+    <script>
+        let total_rec = 200;
+        let limit = JSON.parse(<%= limit %>);
+        let pages = total_rec / limit;
+        let value = <%= page %>;
 
-    let prev = document.getElementById("previouspage");
-    let next = document.getElementById("nextpage");
-    let first = document.getElementById("firstpage");
-    let last = document.getElementById("lastpage");
-    let curpage = document.getElementById("curpage");
+        let prev = document.getElementById("previouspage");
+        let next = document.getElementById("nextpage");
+        let first = document.getElementById("firstpage");
+        let last = document.getElementById("lastpage");
+        let curpage = document.getElementById("curpage");
 
 
-    curpage.innerText = value;
+        curpage.innerText = value;
 
-    // loadUrl(1);
 
-    if(value == 1){
-        prev.style.opacity = "0.5";
-        prev.disabled = true;
-        first.style.opacity = "0.5";
-        first.disabled = true;
-    }
+        if (value == 1) {
+            prev.style.opacity = "0.5";
+            prev.disabled = true;
+            first.style.opacity = "0.5";
+            first.disabled = true;
+        }
 
-    if(value == pages){
-        next.style.opacity = "0.5";
-        next.disabled = true;
-        last.style.opacity = "0.5";
-        last.disabled = true;
-    }
-    const pre = () =>{
-        if(value > 1  && value <= pages){
-            console.log("Previous page");
-            localStorage.setItem("page", --value);
+        if (value == pages) {
+            next.style.opacity = "0.5";
+            next.disabled = true;
+            last.style.opacity = "0.5";
+            last.disabled = true;
+        }
+        const pre = () => {
+            if (value > 1 && value <= pages) {
+                console.log("Previous page");
+                localStorage.setItem("page", --value);
+                let url = value;
+                append_parameter("page", url);
+                return value;
+            }
+
+        }
+
+        const nex = () => {
+            if (value >= 1 && value < pages) {
+                console.log("Next Page");
+                localStorage.setItem("page", ++value);
+                let url = value;
+                append_parameter("page", url);
+                return value;
+            }
+
+        }
+
+
+        const firstpg = () => {
+            console.log("starting page");
+            value = 1;
+            localStorage.setItem("page", value);
             let url = value;
-            // loadUrl(url);
-            append_parameter("page",url);
+            append_parameter("page", url);
             return value;
         }
 
-    }
-
-    const nex = () =>{
-        if(value>=1 && value < pages){
-            console.log("Next Page");
-            localStorage.setItem("page", ++value);
+        const lastpg = () => {
+            console.log("last page");
+            value = pages;
+            localStorage.setItem("page", value);
             let url = value;
-            // loadUrl(url);
-            append_parameter("page",url);
+            append_parameter("page", url);
             return value;
+
         }
 
-    }
-
-
-    const firstpg = ()=> {
-        console.log("starting page");
-        value = 1;
-        localStorage.setItem("page" ,value);
-        let url = value;
-        // loadUrl(url);
-        append_parameter("page",url);
-        return value;
-    }
-
-    const lastpg = ()=> {
-        console.log("last page");
-        value = pages;
-        localStorage.setItem("page" ,value);
-        let url = value;
-        // loadUrl(url);
-        append_parameter("page",url);
-        return value;
-
-    }  
-
-    function myfun(){
+        function myfun() {
             var e = document.getElementById("monthyear").value;
             console.log(e);
-            append_parameter("value",e);
+            append_parameter("value", e);
             window.location.href = `/stud_attend?value=${e}`;
-            // append_parameter("page",1);
 
         }
-    const append_parameter = (name,value) =>{
-        let params = new URLSearchParams(window.location.search);   
-        params.set(name,value);
-        window.location.search = params.toString();
-        // console.log(params);
-}
+        const append_parameter = (name, value) => {
+            let params = new URLSearchParams(window.location.search);
+            params.set(name, value);
+            window.location.search = params.toString();
+        }
 
-    const remove_parameter = (name) =>{
-        let params = new URLSearchParams(window.location.search);   
-        params.delete(name);
-        console.log(params);
+        const remove_parameter = (name) => {
+            let params = new URLSearchParams(window.location.search);
+            params.delete(name);
+            console.log(params);
 
-    }
+        }
 
-prev.addEventListener("click",pre);
+        prev.addEventListener("click", pre);
 
-next.addEventListener("click",nex);
+        next.addEventListener("click", nex);
 
-first.addEventListener("click",firstpg);
+        first.addEventListener("click", firstpg);
 
-last.addEventListener("click", lastpg);
-</script>
+        last.addEventListener("click", lastpg);
+    </script>
 </body>
+
 </html>

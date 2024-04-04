@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .bn1{
+        .bn1 {
             margin-bottom: 20px;
             background-color: #aad6fa;
             border-radius: 20rem;
             width: 40px;
             height: 30px;
             /* align-items: center; */
-            border-color: #aad6fa   ;
-           
+            border-color: #aad6fa;
+
         }
-        .bn1:hover{
+
+        .bn1:hover {
             background-color: #d8ebfa;
         }
-        .btn{
+
+        .btn {
             display: flex;
             flex-direction: column;
         }
-        .btn > button {
+
+        .btn>button {
             border-radius: 50%;
         }
+
         /* table > tr >th >button >img{
             display: flex;
             
         } */
-        .btn1{
+        .btn1 {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,259 +42,292 @@
         }
     </style>
 </head>
+
 <body>
     <h2 style="text-align: center;">Student Details</h2>
     <div style="display: flex; justify-content: center; gap: 20px; align-items: center; text-align: center;">
-        <button id="firstpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg=="/></button>
-        <button id="previouspage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnElEQVRIS+2T0Q2AIAxEYQM30RF0Ih1BJ9MRdBNH8JpoQvjptULihyT3RXOvPWgMlU+s7B9+gJrwJyNq0PYILWr7KLBOIOYr1N2AWYNYAKn5AeMeOksBXOYCZyZwmzOAV+YsYENhC+3QwOSevgsbkRvCAKQhicoFYQFuiAWQQ2STiy7a83YS18SYM79IW1T13hqRapgX/AA1suoRXYjsHhmBZNpoAAAAAElFTkSuQmCC"/></button>
-        <button id="curpage" class="bn1"><%= page %></button>
-        <button id="nextpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkElEQVRIS2NkoDFgpLH5DKMWEAzhQRVEAUDnHgDiDwSdjaSAWB+ADF8PxBeA2JEUS4i1QADqen1SLSHWApCnybKEFAvIsoRUC0i2hFwL9gNtMgDii0DsgC/SSbUAFA9EGw7yLikWkGw4KRaQZTgpFsAyGsEwR8/lpAQRTYsKUoofFLWk+IAsS0YtIBhsNA8iACj+IhkevsLkAAAAAElFTkSuQmCC"/></button>
-        <button id="lastpage" class="bn1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC"/></button>
+        <button id="firstpage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg==" /></button>
+        <button id="previouspage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnElEQVRIS+2T0Q2AIAxEYQM30RF0Ih1BJ9MRdBNH8JpoQvjptULihyT3RXOvPWgMlU+s7B9+gJrwJyNq0PYILWr7KLBOIOYr1N2AWYNYAKn5AeMeOksBXOYCZyZwmzOAV+YsYENhC+3QwOSevgsbkRvCAKQhicoFYQFuiAWQQ2STiy7a83YS18SYM79IW1T13hqRapgX/AA1suoRXYjsHhmBZNpoAAAAAElFTkSuQmCC" /></button>
+        <button id="curpage" class="bn1">
+            <%= page %>
+        </button>
+        <button id="nextpage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkElEQVRIS2NkoDFgpLH5DKMWEAzhQRVEAUDnHgDiDwSdjaSAWB+ADF8PxBeA2JEUS4i1QADqen1SLSHWApCnybKEFAvIsoRUC0i2hFwL9gNtMgDii0DsgC/SSbUAFA9EGw7yLikWkGw4KRaQZTgpFsAyGsEwR8/lpAQRTYsKUoofFLWk+IAsS0YtIBhsNA8iACj+IhkevsLkAAAAAElFTkSuQmCC" /></button>
+        <button id="lastpage" class="bn1"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC" /></button>
 
 
         <!-- <p>No. of records : <input type="text" id="val"></p> -->
     </div>
-  <center><table border="1" cellpadding="5" style="border-collapse: collapse;">
-        <tr style="background-color: aquamarine;">
-            <!-- <th></th> -->
-            <th>
-                <div class="btn1">
-                    Student Id 
-                    <div class="btn">
-                        <button id="asc" onclick="asc('student_Id')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('student_Id')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+    <center>
+        <table border="1" cellpadding="5" style="border-collapse: collapse;">
+            <tr style="background-color: aquamarine;">
+                <!-- <th></th> -->
+                <th>
+                    <div class="btn1">
+                        Student Id
+                        <div class="btn">
+                            <button id="asc" onclick="asc('student_Id')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('student_Id')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    First Name 
-                    <div class="btn">
-                        <button id="asc" onclick="asc('firstName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('firstName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        First Name
+                        <div class="btn">
+                            <button id="asc" onclick="asc('firstName')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('firstName')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Last Name
-                    <div class="btn">
-                        <button id="asc" onclick="asc('lastName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('lastName')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Last Name
+                        <div class="btn">
+                            <button id="asc" onclick="asc('lastName')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('lastName')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Age
-                    <div class="btn">
-                        <button id="asc" onclick="asc('age')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('age')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Age
+                        <div class="btn">
+                            <button id="asc" onclick="asc('age')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('age')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Email
-                    <div class="btn">
-                        <button id="asc" onclick="asc('email')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('email')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Email
+                        <div class="btn">
+                            <button id="asc" onclick="asc('email')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('email')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Phone No
-                    <div class="btn">
-                        <button id="asc" onclick="asc('contactNo')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('contactNo')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Phone No
+                        <div class="btn">
+                            <button id="asc" onclick="asc('contactNo')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('contactNo')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Date Of Birth
-                    <div class="btn">
-                        <button id="asc" onclick="asc('birthdate')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('birthdate')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Date Of Birth
+                        <div class="btn">
+                            <button id="asc" onclick="asc('birthdate')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('birthdate')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Gender
-                    <div class="btn">
-                        <button id="asc" onclick="asc('gender')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('gender')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Gender
+                        <div class="btn">
+                            <button id="asc" onclick="asc('gender')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('gender')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    City
-                    <div class="btn">
-                        <button id="asc" onclick="asc('city')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('city')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        City
+                        <div class="btn">
+                            <button id="asc" onclick="asc('city')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('city')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th>
-                <div class="btn1">
-                    Pincode
-                    <div class="btn">
-                        <button id="asc" onclick="asc('pincode')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('pincode')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        Pincode
+                        <div class="btn">
+                            <button id="asc" onclick="asc('pincode')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('pincode')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>        
-            </th>
-            <th>
-                <div class="btn1">
-                    DateTime
-                    <div class="btn">
-                        <button id="asc" onclick="asc('date_time')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg=="/></button>
-                        <button id="desc" onclick="desc('date_time')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII="/></button>
+                </th>
+                <th>
+                    <div class="btn1">
+                        DateTime
+                        <div class="btn">
+                            <button id="asc" onclick="asc('date_time')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS2NkoDFgpLH5DKMWEAzhkRdEAtAw+UAwbKAKSAkikOH7ofocgTRRlhBrAcxwA6gFF4A0UZYQYwGy4RehFugDaaIsIWQBuuEOUAsOAGmiLMFnATbDYeEOkiPKEnwWBAANWQ/EoGABuRw9UpEtaQTKN2BLWYSCCGQJyKW4UgzIkgJchoMsJGQBsckdp7pRCwgG4WgQjYAgAgBwXR0ZpwKg5gAAAABJRU5ErkJggg==" /></button>
+                            <button id="desc" onclick="desc('date_time')"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAArUlEQVRIS2NkoDFgpLH5DKMWEAzh0SAa/EEUAHTiASD+gMOpAkDxfCBuxOUVfJEMMnw9EF8AYkcsloAM3w/EBlALGrBZgs8CkAEg1+tjsQTZ8ItAeQdcviSUTLFZAnIozOV4DQcpJGQBSA26JSAxULAQNJxYC9AtAfGJMpwUC5AtAbFxhjl6RBMTRMh6QMEFAriSLbr5RMUBhiZSBEj1ASlmg9WOWkAwyIZ+EAEAPPgdGfsD58MAAAAASUVORK5CYII=" /></button>
+                        </div>
                     </div>
-                </div>
-            </th>
-        </tr>
-        <% for(let i = 0;i < data.length; i++){%>
-            <tr>              
-                <td><%= data[i].student_Id %></td>
-                <td><%= data[i].firstName %></td>
-                <td><%= data[i].lastName %></td>
-                <td><%= data[i].age %></td>
-                <td><%= data[i].email %></td>
-                <td><%= data[i].contactNo %></td>
-                <td><%= data[i].birthdate %></td>
-                <td><%= data[i].gender %></td>
-                <td><%= data[i].city %></td>
-                <td><%= data[i].pincode %></td>
-                <td><%= data[i].date_time %></td>
+                </th>
+            </tr>
+            <% for(let i=0;i < data.length; i++){%>
+                <tr>
+                    <td>
+                        <%= data[i].student_Id %>
+                    </td>
+                    <td>
+                        <%= data[i].firstName %>
+                    </td>
+                    <td>
+                        <%= data[i].lastName %>
+                    </td>
+                    <td>
+                        <%= data[i].age %>
+                    </td>
+                    <td>
+                        <%= data[i].email %>
+                    </td>
+                    <td>
+                        <%= data[i].contactNo %>
+                    </td>
+                    <td>
+                        <%= data[i].birthdate %>
+                    </td>
+                    <td>
+                        <%= data[i].gender %>
+                    </td>
+                    <td>
+                        <%= data[i].city %>
+                    </td>
+                    <td>
+                        <%= data[i].pincode %>
+                    </td>
+                    <td>
+                        <%= data[i].date_time %>
+                    </td>
 
-            </tr>        
-        <%}%>
-    </table>
-</center>
-    
-<!-- </center> -->
-<script >
-    let total_rec = 50000;
-let limit = JSON.parse(<%= limit %>);
-let pages = total_rec / limit;
-// let value = localStorage.getItem("page") ? localStorage.getItem("page") : 1;
-let value = <%= page %>;
+                </tr>
+                <%}%>
+        </table>
+    </center>
 
-let prev = document.getElementById("previouspage");
-let next = document.getElementById("nextpage");
-let first = document.getElementById("firstpage");
-let last = document.getElementById("lastpage");
-let curpage = document.getElementById("curpage");
+    <script>
+        let total_rec = 50000;
+        let limit = JSON.parse(<%= limit %>);
+        let pages = total_rec / limit;
+        let value = <%= page %>;
 
-
-curpage.innerText = value;
-
-// loadUrl(1);
-
-if(value == 1){
-    prev.style.opacity = "0.5";
-    prev.disabled = true;
-    first.style.opacity = "0.5";
-    first.disabled = true;
-}
-
-if(value == pages){
-    next.style.opacity = "0.5";
-    next.disabled = true;
-    last.style.opacity = "0.5";
-    last.disabled = true;
-}
-const pre = () =>{
-    if(value > 1  && value <= pages){
-        console.log("Previous page");
-        localStorage.setItem("page", --value);
-        let url = value;
-        // loadUrl(url);
-        append_parameter("page",url);
-        return value;
-    }
-
-}
-
-const nex = () =>{
-    if(value>=1 && value < pages){
-        console.log("Next Page");
-        localStorage.setItem("page", ++value);
-        let url = value;
-        // loadUrl(url);
-        append_parameter("page",url);
-        return value;
-    }
-
-}
+        let prev = document.getElementById("previouspage");
+        let next = document.getElementById("nextpage");
+        let first = document.getElementById("firstpage");
+        let last = document.getElementById("lastpage");
+        let curpage = document.getElementById("curpage");
 
 
-const firstpg = ()=> {
-    console.log("starting page");
-    value = 1;
-    localStorage.setItem("page" ,value);
-    let url = value;
-    // loadUrl(url);
-    append_parameter("page",url);
-    return value;
-}
-
-const lastpg = ()=> {
-    console.log("last page");
-    value = pages;
-    localStorage.setItem("page" ,value);
-    let url = value;
-    // loadUrl(url);
-    append_parameter("page",url);
-    return value;
-
-}
+        curpage.innerText = value;
 
 
+        if (value == 1) {
+            prev.style.opacity = "0.5";
+            prev.disabled = true;
+            first.style.opacity = "0.5";
+            first.disabled = true;
+        }
 
-// const loadUrl = (url) =>{
-//     window.location.href="/student_list?page="+url;
-// }
+        if (value == pages) {
+            next.style.opacity = "0.5";
+            next.disabled = true;
+            last.style.opacity = "0.5";
+            last.disabled = true;
+        }
+        const pre = () => {
+            if (value > 1 && value <= pages) {
+                console.log("Previous page");
+                localStorage.setItem("page", --value);
+                let url = value;
+                append_parameter("page", url);
+                return value;
+            }
 
-function asc(value){
-    window.location.href=`/student_list?obf=${value}&ord=asc`;
-    // window.location.href=`/?page=1&obf=${value}&order=asc`;
-    // append_parameter("obf",String(value));
-    // append_parameter("ord","asc");
-}
+        }
 
-function desc(value){
-    window.location.href=`/student_list?obf=${value}&ord=desc`
-    // window.location.href=`/?page=1&obf=${value}&order=desc`;
-    // append_parameter("obf",String(value));
-    // append_parameter("ord","desc");
-}
+        const nex = () => {
+            if (value >= 1 && value < pages) {
+                console.log("Next Page");
+                localStorage.setItem("page", ++value);
+                let url = value;
+                append_parameter("page", url);
+                return value;
+            }
 
-const append_parameter = (name,value) =>{
-    let params = new URLSearchParams(window.location.search);   
-    params.set(name,value);
-    window.location.search = params.toString();
-    console.log(params);
-}
+        }
 
-const remove_parameter = (name,value) =>{
-    let params = new URLSearchParams(window.location.search);   
-    params.delete(name);
 
-}
+        const firstpg = () => {
+            console.log("starting page");
+            value = 1;
+            localStorage.setItem("page", value);
+            let url = value;
+            append_parameter("page", url);
+            return value;
+        }
 
-prev.addEventListener("click",pre);
+        const lastpg = () => {
+            console.log("last page");
+            value = pages;
+            localStorage.setItem("page", value);
+            let url = value;
+            append_parameter("page", url);
+            return value;
 
-next.addEventListener("click",nex);
+        }
+        function asc(value) {
+            window.location.href = `/student_list?obf=${value}&ord=asc`;
+        }
 
-first.addEventListener("click",firstpg);
+        function desc(value) {
+            window.location.href = `/student_list?obf=${value}&ord=desc`
+        }
 
-last.addEventListener("click", lastpg);
+        const append_parameter = (name, value) => {
+            let params = new URLSearchParams(window.location.search);
+            params.set(name, value);
+            window.location.search = params.toString();
+            console.log(params);
+        }
 
-</script>
+        const remove_parameter = (name, value) => {
+            let params = new URLSearchParams(window.location.search);
+            params.delete(name);
+
+        }
+
+        prev.addEventListener("click", pre);
+
+        next.addEventListener("click", nex);
+
+        first.addEventListener("click", firstpg);
+
+        last.addEventListener("click", lastpg);
+
+    </script>
 </body>
+
 </html>

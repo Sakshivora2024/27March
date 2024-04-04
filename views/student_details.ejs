@@ -1,97 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <center><table border="1" cellpadding="5" style="border-collapse: collapse;width: 80%;">
-        <tr>
-            <td>Student Id</td>
-            <td colspan="6"><%= users.student_Id%></td>
-        </tr>
-        <tr>
-            <td>Student Name</td>
-            <td colspan="6"><%= users.name%></td>
-        </tr>
-        <tr>
-            <td rowspan="2">Subject Id</td>
-            <td colspan="2">Terminal</td>
-            <td colspan="2">Prelims</td>
-            <td colspan="2">External</td>
-        </tr>
-        <tr>
-            <td>Practical(10)</td>
-            <td>Theory(40)</td>
-            <td>Practical(10)</td>
-            <td>Theory(40)</td>
-            <td>Practical(40)</td>
-            <td>Theory(60)</td>
-        </tr>
-        <tr>
-            <td>Python</td>
-            <td><%= users.prac1%></td>
-            <td><%= users.theory1%></td>
-            <td><%= users.prac2%></td>
-            <td><%= users.theory2%></td>
-            <td><%= users.prac3%></td>
-            <td><%= users.theory3%></td>
-        </tr>
-        <tr>
-            <td>DBMS</td>
-            <td><%= users.prac4%></td>
-            <td><%= users.theory4%></td>
-            <td><%= users.prac5%></td>
-            <td><%= users.theory5%></td>
-            <td><%= users.prac6%></td>
-            <td><%= users.theory6%></td>
-        </tr>
-        <tr>
-            <td>Java</td>
-            <td><%= users.prac7%></td>
-            <td><%= users.theory7%></td>
-            <td><%= users.prac8%></td>
-            <td><%= users.theory8%></td>
-            <td><%= users.prac9%></td>
-            <td><%= users.theory9%></td>
-        </tr>
-        <tr>
-            <td>.Net</td>
-            <td><%= users.prac10%></td>
-            <td><%= users.theory10%></td>
-            <td><%= users.prac11%></td>
-            <td><%= users.theory11%></td>
-            <td><%= users.prac12%></td>
-            <td><%= users.theory12%></td>
-        </tr>
-        <tr>
-            <td>XML</td>
-            <td><%= users.prac13%></td>
-            <td><%= users.theory13%></td>
-            <td><%= users.prac14%></td>
-            <td><%= users.theory14%></td>
-            <td><%= users.prac15%></td>
-            <td><%= users.theory15%></td>
-        </tr>
-        <tr>
-            <td>C++</td>
-            <td><%= users.prac16%></td>
-            <td><%= users.theory16%></td>
-            <td><%= users.prac17%></td>
-            <td><%= users.theory17%></td>
-            <td><%= users.prac18%></td>
-            <td><%= users.theory18%></td>
-        </tr>
-        <tr>
-            <td>Percentage</td>
-            <td colspan="2"><%= users.t_res%></td>
-            <td colspan="2"><%= users.p_res%></td>
-            <td colspan="2"><%= users.e_res%></td>   
-        </tr>
-    </table>
 
-    <h2>Total Percentage: <%= users.f_res%></h2>
-</center>
+<body>
+    <center>
+        <table border="1" cellpadding="5" style="border-collapse: collapse;width: 80%;">
+            <tr>
+                <td>Student Id</td>
+                <td colspan="6">
+                    <%= users.student_Id%>
+                </td>
+            </tr>
+            <tr>
+                <td>Student Name</td>
+                <td colspan="6">
+                    <%= users.name%>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">Subject Id</td>
+                <td colspan="2">Terminal</td>
+                <td colspan="2">Prelims</td>
+                <td colspan="2">External</td>
+            </tr>
+            <tr>
+                <td>Practical(10)</td>
+                <td>Theory(40)</td>
+                <td>Practical(10)</td>
+                <td>Theory(40)</td>
+                <td>Practical(40)</td>
+                <td>Theory(60)</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>
+                    <%= users.prac1%>
+                </td>
+                <td>
+                    <%= users.theory1%>
+                </td>
+                <td>
+                    <%= users.prac2%>
+                </td>
+                <td>
+                    <%= users.theory2%>
+                </td>
+                <td>
+                    <%= users.prac3%>
+                </td>
+                <td>
+                    <%= users.theory3%>
+                </td>
+            </tr>
+            <tr>
+                <td>DBMS</td>
+                <td>
+                    <%= users.prac4%>
+                </td>
+                <td>
+                    <%= users.theory4%>
+                </td>
+                <td>
+                    <%= users.prac5%>
+                </td>
+                <td>
+                    <%= users.theory5%>
+                </td>
+                <td>
+                    <%= users.prac6%>
+                </td>
+                <td>
+                    <%= users.theory6%>
+                </td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>
+                    <%= users.prac7%>
+                </td>
+                <td>
+                    <%= users.theory7%>
+                </td>
+                <td>
+                    <%= users.prac8%>
+                </td>
+                <td>
+                    <%= users.theory8%>
+                </td>
+                <td>
+                    <%= users.prac9%>
+                </td>
+                <td>
+                    <%= users.theory9%>
+                </td>
+            </tr>
+            <tr>
+                <td>.Net</td>
+                <td>
+                    <%= users.prac10%>
+                </td>
+                <td>
+                    <%= users.theory10%>
+                </td>
+                <td>
+                    <%= users.prac11%>
+                </td>
+                <td>
+                    <%= users.theory11%>
+                </td>
+                <td>
+                    <%= users.prac12%>
+                </td>
+                <td>
+                    <%= users.theory12%>
+                </td>
+            </tr>
+            <tr>
+                <td>XML</td>
+                <td>
+                    <%= users.prac13%>
+                </td>
+                <td>
+                    <%= users.theory13%>
+                </td>
+                <td>
+                    <%= users.prac14%>
+                </td>
+                <td>
+                    <%= users.theory14%>
+                </td>
+                <td>
+                    <%= users.prac15%>
+                </td>
+                <td>
+                    <%= users.theory15%>
+                </td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td>
+                    <%= users.prac16%>
+                </td>
+                <td>
+                    <%= users.theory16%>
+                </td>
+                <td>
+                    <%= users.prac17%>
+                </td>
+                <td>
+                    <%= users.theory17%>
+                </td>
+                <td>
+                    <%= users.prac18%>
+                </td>
+                <td>
+                    <%= users.theory18%>
+                </td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td colspan="2">
+                    <%= users.t_res%>
+                </td>
+                <td colspan="2">
+                    <%= users.p_res%>
+                </td>
+                <td colspan="2">
+                    <%= users.e_res%>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Total Percentage: <%= users.f_res%>
+        </h2>
+    </center>
 </body>
+
 </html>

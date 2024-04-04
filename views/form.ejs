@@ -823,10 +823,8 @@
         function validationEvent(id) {
 
             if (id == "basicDetails") {
-                // console.log(ValidateBasicDetails())
                 return ValidateBasicDetails();
             } else if (id == "educational") {
-                // console.log(validateEducation())
                 return validateEducation();
             } else if (id == "workexp") {
                 return vaildateWorkExperience();
@@ -906,11 +904,8 @@
             let loc = document.getElementById("location");
             let options = loc.options;
             let val = result[6][0]["location"].split(",");
-            // console.log(val);
             for (let key in options) {
-                // console.log(options[key])
                 for (let value in val) {
-                    // console.log(options[key].value === val[value]);
                     if (options[key].value === val[value]) {
                         options[key].setAttribute("selected", "");
                     }
@@ -930,10 +925,7 @@
 
         }
         function technologydata(result) {
-            // console.log(result[4])
-            // let php = 
             for (i in result[4]) {
-                // console.log(result[4][i].tech_level)
                 if ((result[4][i].technology == "PHP")) {
                     let id = result[4][i];
 
@@ -953,7 +945,6 @@
                 if ((result[4][i].technology == "MySQL")) {
                     document.getElementById("mysql").checked = true;
                     let id = result[4][i];
-                    // console.log(id.tech_level);
                     if (id.tech_level == "Beginer") {
                         document.getElementsByName("mysql_tech_level")[0].checked = true;
                     } else if (id.tech_level == "Mideator") {
@@ -968,7 +959,6 @@
                 if ((result[4][i].technology == "Laravel")) {
                     document.getElementById("laravel").checked = true;
                     let id = result[4][i];
-                    // console.log(id.tech_level);
                     if (id.tech_level == "Beginer") {
                         document.getElementsByName("laravel_tech_level")[0].checked = true;
                     } else if (id.tech_level == "Mideator") {
@@ -982,7 +972,6 @@
                 if ((result[4][i].technology == "Oracle")) {
                     document.getElementById("oracle").checked = true;
                     let id = result[4][i];
-                    // console.log(id.tech_level);
                     if (id.tech_level == "Beginer") {
                         document.getElementsByName("oracle_tech_level")[0].checked = true;
                     } else if (id.tech_level == "Mideator") {
@@ -993,14 +982,7 @@
                     }
 
                 }
-                // if(result[4][i].tech_level == "Beginer" || result[4][i].tech_level == "Mideator" || result[4][i].tech_level == "Expert"){
-                //     document.getElementsByName("php_tech_level").checked = true;
-                // }
             }
-
-
-
-
         }
         function languageData(result) {
             let lang = document.querySelectorAll(".lang");
@@ -1035,14 +1017,9 @@
                     }
 
                 }
-
-
-
-
             }
         }
         function educationData(result) {
-            // console.log(result[1])
             for (var i = 0; i < result[1].length; i++) {
                 console.log(result[1][i])
                 if (i == 0) {
@@ -1076,8 +1053,6 @@
                         z.appendChild(input);
                         td.appendChild(z);
                     }
-                    // var button = document.createElement("input");
-                    // button.
                 }
             }
         }
@@ -1115,8 +1090,6 @@
                         z.appendChild(input);
                         td.appendChild(z);
                     }
-                    // var button = document.createElement("input");
-                    // button.
                 }
             }
         }
@@ -1132,7 +1105,6 @@
 
                 fillData(result);
             }
-
         }
         check();
     </script>

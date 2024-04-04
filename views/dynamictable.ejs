@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/dynaimctable.css">
     <script>
-        function addcol(){
-            // const node = document.getElementById("demo");
-            // const clone = node.cloneNode(true);
-            // document.body.appendChild(clone);
+        function addcol() {
             var row = document.getElementById("demo");
             var table = document.getElementById("modify");
             var clone = row.cloneNode(true);
-            // clone.id = "newID";
             table.appendChild(clone);
 
         }
-        function subcol(){
+        function subcol() {
             document.getElementById("modify").deleteRow(0);
 
         }
 
-        function addrow(){
-            // var row = document.getElementsByTagName("tr").rows.length;
+        function addrow() {
             let tbl = document.getElementById('demo1');
 
-            for(let i=0; i<tbl.rows.length; i++)
-            {
+            for (let i = 0; i < tbl.rows.length; i++) {
                 let r = tbl.rows[i];
                 r.insertCell(0);
             }
         }
-        function subrow(){
+        function subrow() {
             let tbl = document.getElementById('demo1');
 
-            for(let i=0;i<tbl.rows.length; i++){
+            for (let i = 0; i < tbl.rows.length; i++) {
                 let r = tbl.rows[i];
                 r.deleteCell(0);
             }
         }
     </script>
 </head>
+
 <body>
-    <h2>Name: Sakshi Vora   Date:01-02-2024  EmployeeId: 24DEV043</h2>
+    <h2>Name: Sakshi Vora Date:01-02-2024 EmployeeId: 24DEV043</h2>
     <br>
     <br>
     <button onclick="addcol()" style="height: 50px; width: 60px;">AddRow</button>
@@ -56,22 +52,23 @@
     <button onclick="subrow()" style="height: 50px; width: 60px;">SubCol</button>
     <br>
     <br>
-        <table border="1" cellpadding="50" id="demo1">
-            <tbody id="modify">
-                <tr id="demo">
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        
+    <table border="1" cellpadding="50" id="demo1">
+        <tbody id="modify">
+            <tr id="demo">
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+
     </table>
 
     <br>
     <br>
-    
+
 </body>
+
 </html>

@@ -1,22 +1,23 @@
-form{
-    display:flex;
+form {
+    display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
 }
 
 
-fieldset{
-    display:flex;
+fieldset {
+    display: flex;
     flex-direction: column;
     gap: 30px;
 }
-div{
+
+div {
     display: flex;
     gap: 5px;
 }
 
-input[type = submit]{
+input[type=submit] {
     background-color: white;
     width: 80px;
     height: 30px;
