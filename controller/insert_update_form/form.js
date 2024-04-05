@@ -239,10 +239,8 @@ const update_post = (req,res) =>{
             })
 
             data.lang.forEach( async (ele )=>{
-
                 let sql = `update language_master set is_read = ?,is_write = ? , is_speak = ? where language = ? and employee_Id = ?`;
                 const result = await db.query(sql,[ele.is_read,ele.is_write,ele.is_speak,ele.language,id]);
-                
             })
 
             var work2 = [data.php_tech_level,data.mysql_tech_level,data.laravel_tech_level,data.oracle_tech_level];

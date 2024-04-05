@@ -808,7 +808,7 @@
             let curctc = document.getElementById("curctc").value;
 
 
-            if (location) {
+            if (location.trim() !== '') {
                 if (notice_period.trim() === '' || dept.trim() === '' || exctc.trim() === '' || curctc.trim() === '') {
                     alert("Please fill the all fields");
                     return false;
@@ -857,6 +857,7 @@
             document.getElementById("phoneno").value = result[0][0]["phoneno"];
             document.getElementById("address1").value = result[0][0]["address1"];
             document.getElementById("address2").value = result[0][0]["address2"];
+            // document.getElementById("city").value = result[0][0]["city"];
             document.getElementById("zipcode").value = result[0][0]["zipcode"];
             document.getElementById("date").value = result[0][0]["dateofbirth"].split("T")[0];
             let radio = document.getElementsByName("gender");
