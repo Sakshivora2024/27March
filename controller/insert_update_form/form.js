@@ -125,9 +125,9 @@ const display = (req,res) =>{
     //     res.render("display",{result});
     // })
     let display = async () =>{
-        const [result1] = await db.query(`Select * from employee_details`);
-        console.log(result1);
-        res.render("display",{result1});
+        const [result] = await db.query(`Select * from employee_details`);
+        console.log(result);
+        res.render("display",{result});
     }
     display();
 }
